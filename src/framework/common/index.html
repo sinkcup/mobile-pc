@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>common</title>
-</head>
-<body>
-
-</body>
-</html>
-<script>
-  function isMobile () {
-    var userAgenInfo = navigator.userAgent
-    var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'iPad', 'iPod')
-    var flag = false
-    for (var v = 0; v < Agents.length; v++) {
-      if (userAgenInfo.indexOf(Agents[v]) > 0) {
-        flag = true
-        break
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>mobile</title>
+    <script>
+      function isMobile () {
+        var userAgenInfo = navigator.userAgent
+        var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'iPad', 'iPod')
+        var flag = false
+        for (var v = 0; v < Agents.length; v++) {
+          if (userAgenInfo.indexOf(Agents[v]) > 0) {
+            flag = true
+            break
+          }
+        }
+        return flag
       }
-    }
-    return flag
-  }
-  if (isMobile()) {
-    window.location.href = '/m_index.html#/'
-  } else {
-    window.location.href = '/p_index.html#/'
-  }
-</script>
+      if (!isMobile()) {
+        window.location.href = '/web.html#/'
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
